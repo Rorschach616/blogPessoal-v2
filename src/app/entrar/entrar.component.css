@@ -1,0 +1,7 @@
+#img-bg{
+background-image: url(https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29yayUyMGRlc2t8ZW58MHx8MHx8&w=1000&q=80);
+min-height: 828px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
