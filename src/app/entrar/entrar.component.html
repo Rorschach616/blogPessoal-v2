@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
     <div class="row d-flex align-items-center">
 
         <div class="col-md-6">
@@ -12,19 +11,19 @@
 
                     <div class="form-group">
                         <label class="mb-2" for="user">Usuário</label>
-                        <input type="text" class="form-control" id="user" placeholder="Seu usuário">
+                        <input [(ngModel)]="userLogin.usuario" type="text" class="form-control" id="user" placeholder="Seu usuário">
                     </div>
 
                     <p></p>
 
                     <div class="form-group">
                         <label class="mb-2" for="password">Senha</label>
-                        <input type="password" class="form-control" id="password" placeholder="Sua senha">
+                        <input [(ngModel)]="userLogin.senha" type="password" class="form-control" id="password" placeholder="Sua senha">
 
                     </div>
                     <p></p>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success">Entrar</button>
+                        <button (click)="entrar()"  type="submit" class="btn btn-success">Entrar</button>
                     </div>
 
                     <hr class="mt-5 mb-5">
