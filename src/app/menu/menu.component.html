@@ -6,10 +6,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
           <li class="nav-item">
-           <img width="50px" height="50px" src="http://1.bp.blogspot.com/-M7tvZzk8_wE/VB7qhFXW6tI/AAAAAAAANRE/F7I5BmzopFA/s1600/KOF%2B96%2B-%2BGolpes%2BClark.jpg" alt="" class="img-fluid rounded-circle">
+           <img width="50px" height="50px" src="{{foto}}" alt="" class="img-fluid rounded-circle">
           </li>
           <li class="nav-item p-3">
-            <p class="m-0 fw-bold text-white fs-16">Nome do usuário</p>
+            <p class="m-0 fw-bold text-white fs-16">Olá, {{nome}}</p>
             
           </li>
           <li class="nav-item">
@@ -18,7 +18,7 @@
         </ul>
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0 d-flex align-items-center">
             
-            <a class="m-0 fw-bold text-white fs-16" style="text-decoration:none;">Sair <i class="fas fa-sign-out-alt"></i></a>
+            <a (click)="sair()" class="m-0 fw-bold text-white fs-16" style="text-decoration:none;">Sair <i class="fas fa-sign-out-alt"></i></a>
             
         </ul>
       </div>
