@@ -1,78 +1,93 @@
 <div class="container-fluid">
 
-    <div class="row bg-secondary">
+  <div class="row bg-secondary">
 
-        <div class="col-md-12 text-white">
+    <div class="col-md-12 text-white">
 
-            <a routerLink="/inicio" class="text-white text-left">
-                <i class="fa fa-angle-double-left" aria-hidden="true"></i> Início
-            </a>
+      <a routerLink="/inicio" class="text-white text-left text-decoration-none">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i> início
+      </a>
 
-            <h1 class="fs-54 text-center">Temas</h1>
-            <h5 class="fs-18 text-center">Veja aqui todos os temas cadastrados ou cadastre um novo</h5>
+      <h1 class="fs-54 text-center">Temas</h1>
+      <h5 class="fs-18 text-center">Veja aqui todos os temas cadastrados ou cadastre um novo</h5>
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input type="text" class="form-control mt-2 mb-2" id="descricao"
-                            placeholder="Digite a descrição do tema">
-                    </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-3">
+          <div class="form-group">
+            <input [(ngModel)]="tema.descricao" type="text" class="form-control mt-2 mb-2" id="descricao"
+              placeholder="Digite a descrição do tema">
+          </div>
 
-                    <div class="d-flex justify-content-center"><button class="btn btn-light m-2">Cadastrar</button>
-                    </div>
-
-                </div>
-            </div>
+          <div class="d-flex justify-content-center"><button (click)="cadastrar()"
+              class="btn btn-light m-2">Cadastrar</button>
+          </div>
 
         </div>
+      </div>
 
     </div>
+
+  </div>
 
 </div>
 
 <div class="container">
 
-    <div class="row mt-5">
-        <div class="col-md-12">
-            <h2 class="text-center">Todos os temas</h2>
-        </div>
-
-        <div class="row mt-3 mb-5 d-flex justify-content-center">
-            <div class="col-md-6">
-
-                <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-            </div>
-        </div>
-
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="text-center">Todos os temas</h2>
     </div>
 
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+      <div class="col-md-6">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Descrição</th>
+              <th scope="col" class="d-flex justify-content-end">Modificações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tema of listaTemas">
+              <th>{{tema.id}}</th>
+              <td>{{tema.descricao}}</td>
+              <td class="d-flex justify-content-end">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#atualizarPostagem">Editar</button>
+                &nbsp;
+                <button class="btn btn-danger">Apagar</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="atualizarPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Atualizar tema</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+              <label for="titulo">Nova descrição</label>
+              <input type="text" class="form-control mt-2" id="titulo" placeholder="Digite a nova descrição do tema">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Atualizar</button>
+      </div>
+    </div>
+  </div>
 </div>
